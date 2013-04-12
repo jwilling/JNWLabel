@@ -18,6 +18,8 @@
 	self.label.textAlignment = NSCenterTextAlignment;
 	self.label.font = [NSFont boldSystemFontOfSize:17];
 	self.label.textColor = [NSColor colorWithCalibratedWhite:0.2f alpha:1.f];
+	
+	// This turns on font smoothing.
 	self.label.backgroundColor = backgroundColor;
 	self.label.drawsBackground = YES;
 	
