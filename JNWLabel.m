@@ -13,6 +13,8 @@
 @property (nonatomic, strong) NSColor *shadowColor;
 @property (nonatomic, assign) CGSize shadowOffset;
 @property (nonatomic, assign) CGFloat shadowRadius;
+@property (nonatomic, assign) BOOL drawsBackground;
+@property (nonatomic, strong) NSColor *backgroundColor;
 @end
 
 @implementation JNWTextLayer
@@ -20,18 +22,16 @@
 - (void)drawInContext:(CGContextRef)ctx {
 	CGContextSaveGState(ctx);
 	
-	// TODO: Add -drawsBackground property which will let us
-	// flip on font smoothing.
+	if (self.drawsBackground && self.backgroundColor != nil) {
+		CGContextSetFillColorWithColor(ctx, self.backgroundColor.CGColor);
+		CGContextFillRect(ctx, self.bounds);
+		
+		CGContextSetShouldSmoothFonts(ctx, YES);
+		CGContextSetAllowsAntialiasing(ctx, YES);
+		CGContextSetAllowsFontSubpixelPositioning(ctx, YES);
+		CGContextSetAllowsFontSubpixelQuantization(ctx, YES);
+	}
 	
-//	CGContextSetRGBFillColor(ctx, 1, 1, 1, 1.f);
-//	CGContextFillRect(ctx, self.bounds);
-//	CGContextSetShouldSmoothFonts(ctx, YES);
-	
-//	CGContextSetAllowsAntialiasing(ctx, YES);
-//	CGContextSetAllowsFontSmoothing(ctx, YES);
-//	CGContextSetAllowsFontSubpixelPositioning(ctx, YES);
-//	CGContextSetAllowsFontSubpixelQuantization(ctx, YES);
-
 	CGContextSetShadowWithColor(ctx, self.shadowOffset, self.shadowRadius, self.shadowColor.CGColor);
 	[super drawInContext:ctx];
 	
@@ -55,6 +55,7 @@
 	self.textColor = [NSColor blackColor];
 	self.font = [NSFont systemFontOfSize:[NSFont systemFontSize]];
 	self.textAlignment = NSLeftTextAlignment;
+	self.layer.drawsBackground = NO;
 	
 	self.shadowColor = [NSColor clearColor];
 	self.shadowOffset = CGSizeZero;
@@ -141,6 +142,22 @@
 	}
 	
 	self.layer.alignmentMode = alignment;
+}
+
+- (void)setDrawsBackground:(BOOL)drawsBackground {
+	self.layer.drawsBackground = drawsBackground;
+}
+
+- (BOOL)drawsBackground {
+	return self.layer.drawsBackground;
+}
+
+- (void)setBackgroundColor:(NSColor *)backgroundColor {
+	self.layer.backgroundColor = backgroundColor;
+}
+
+- (NSColor *)backgroundColor {
+	return self.layer.backgroundColor;
 }
 
 // We do not want any animations by default.

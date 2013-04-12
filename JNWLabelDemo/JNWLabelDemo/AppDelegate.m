@@ -11,12 +11,15 @@
 @implementation AppDelegate
 
 - (void)awakeFromNib {
-	self.window.backgroundColor = [NSColor colorWithCalibratedWhite:0.635 alpha:1.000];
+	NSColor *backgroundColor = [NSColor colorWithCalibratedWhite:0.635 alpha:1.000];
+	self.window.backgroundColor = backgroundColor;
 	
 	self.label.text = @"Ooh! It's shiny.";
 	self.label.textAlignment = NSCenterTextAlignment;
 	self.label.font = [NSFont boldSystemFontOfSize:17];
 	self.label.textColor = [NSColor colorWithCalibratedWhite:0.2f alpha:1.f];
+	self.label.backgroundColor = backgroundColor;
+	self.label.drawsBackground = YES;
 	
 	self.label.shadowColor = [NSColor colorWithCalibratedWhite:0.8f alpha:1.f];
 	self.label.shadowRadius = 1.f;

@@ -18,6 +18,9 @@
 @property (nonatomic, assign) CGSize shadowOffset;
 @property (nonatomic, assign) CGFloat shadowRadius;
 
+@property (nonatomic, assign) BOOL drawsBackground;
+@property (nonatomic, strong) NSColor *backgroundColor;
+
 @property (nonatomic, assign) NSTextAlignment textAlignment;
 
 @end
