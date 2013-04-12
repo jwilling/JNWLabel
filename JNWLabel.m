@@ -60,6 +60,9 @@
 	self.shadowColor = [NSColor clearColor];
 	self.shadowOffset = CGSizeZero;
 	self.shadowRadius = 0.f;
+	
+	self.drawsBackground = NO;
+	self.backgroundColor = [NSColor whiteColor];
 }
 
 - (id)initWithFrame:(NSRect)frameRect {
