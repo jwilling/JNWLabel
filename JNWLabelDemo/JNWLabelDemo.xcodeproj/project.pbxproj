@@ -92,12 +92,9 @@
 		AB1514A91717D3AB00871248 /* JNWLabelDemo */ = {
 			isa = PBXGroup;
 			children = (
+				ABAF155417186FCC00658A1D /* JNWLabel */,
 				AB1514B51717D3AB00871248 /* AppDelegate.h */,
 				AB1514B61717D3AB00871248 /* AppDelegate.m */,
-				AB1514C01717D3BC00871248 /* JNWLabel.h */,
-				AB1514C11717D3BC00871248 /* JNWLabel.m */,
-				ABAF15501717F35900658A1D /* JNWLabel+Accessibility.h */,
-				ABAF15511717F35900658A1D /* JNWLabel+Accessibility.m */,
 				AB1514B81717D3AB00871248 /* MainMenu.xib */,
 				AB1514AA1717D3AB00871248 /* Supporting Files */,
 			);
@@ -114,6 +111,17 @@
 				AB1514B21717D3AB00871248 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABAF155417186FCC00658A1D /* JNWLabel */ = {
+			isa = PBXGroup;
+			children = (
+				AB1514C01717D3BC00871248 /* JNWLabel.h */,
+				AB1514C11717D3BC00871248 /* JNWLabel.m */,
+				ABAF15501717F35900658A1D /* JNWLabel+Accessibility.h */,
+				ABAF15511717F35900658A1D /* JNWLabel+Accessibility.m */,
+			);
+			name = JNWLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
