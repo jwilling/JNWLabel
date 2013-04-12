@@ -15,6 +15,7 @@
 		AB1514BA1717D3AB00871248 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB1514B81717D3AB00871248 /* MainMenu.xib */; };
 		AB1514C21717D3BC00871248 /* JNWLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1514C11717D3BC00871248 /* JNWLabel.m */; };
 		AB1514C41717D42100871248 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1514C31717D42100871248 /* QuartzCore.framework */; };
+		ABAF15521717F35900658A1D /* JNWLabel+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAF15511717F35900658A1D /* JNWLabel+Accessibility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		AB1514C01717D3BC00871248 /* JNWLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JNWLabel.h; path = ../../JNWLabel.h; sourceTree = "<group>"; };
 		AB1514C11717D3BC00871248 /* JNWLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JNWLabel.m; path = ../../JNWLabel.m; sourceTree = "<group>"; };
 		AB1514C31717D42100871248 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ABAF15501717F35900658A1D /* JNWLabel+Accessibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "JNWLabel+Accessibility.h"; path = "../../JNWLabel+Accessibility.h"; sourceTree = "<group>"; };
+		ABAF15511717F35900658A1D /* JNWLabel+Accessibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "JNWLabel+Accessibility.m"; path = "../../JNWLabel+Accessibility.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				AB1514B61717D3AB00871248 /* AppDelegate.m */,
 				AB1514C01717D3BC00871248 /* JNWLabel.h */,
 				AB1514C11717D3BC00871248 /* JNWLabel.m */,
+				ABAF15501717F35900658A1D /* JNWLabel+Accessibility.h */,
+				ABAF15511717F35900658A1D /* JNWLabel+Accessibility.m */,
 				AB1514B81717D3AB00871248 /* MainMenu.xib */,
 				AB1514AA1717D3AB00871248 /* Supporting Files */,
 			);
@@ -178,6 +183,7 @@
 				AB1514B01717D3AB00871248 /* main.m in Sources */,
 				AB1514B71717D3AB00871248 /* AppDelegate.m in Sources */,
 				AB1514C21717D3BC00871248 /* JNWLabel.m in Sources */,
+				ABAF15521717F35900658A1D /* JNWLabel+Accessibility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +319,7 @@
 				AB1514BF1717D3AB00871248 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
