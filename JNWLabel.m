@@ -66,7 +66,6 @@
 	self.textColor = [NSColor blackColor];
 	self.font = [NSFont systemFontOfSize:[NSFont systemFontSize]];
 	self.textAlignment = NSLeftTextAlignment;
-	self.layer.drawsBackground = NO;
 	
 	self.shadowColor = [NSColor clearColor];
 	self.shadowOffset = CGSizeZero;
