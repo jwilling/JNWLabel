@@ -22,6 +22,7 @@
 
 @interface JNWTextLayer : CATextLayer
 @property (nonatomic, strong) NSColor *shadowColor;
+@property (nonatomic, strong) NSColor *backgroundFillColor;
 @property (nonatomic, assign) CGSize shadowOffset;
 @property (nonatomic, assign) CGFloat shadowRadius;
 @property (nonatomic, assign) BOOL drawsBackground;
@@ -32,8 +33,8 @@
 - (void)drawInContext:(CGContextRef)ctx {
 	CGContextSaveGState(ctx);
 	
-	if (self.drawsBackground && self.backgroundColor != NULL) {
-		CGContextSetFillColorWithColor(ctx, self.backgroundColor);
+	if (self.drawsBackground && self.backgroundFillColor != nil) {
+		CGContextSetFillColorWithColor(ctx, self.backgroundFillColor.CGColor);
 		CGContextFillRect(ctx, self.bounds);
 		
 		CGContextSetShouldSmoothFonts(ctx, YES);
@@ -165,11 +166,11 @@
 }
 
 - (void)setBackgroundColor:(NSColor *)backgroundColor {
-	self.layer.backgroundColor = backgroundColor.CGColor;
+	self.layer.backgroundFillColor = backgroundColor;
 }
 
 - (NSColor *)backgroundColor {
-	return [NSColor colorWithCGColor:self.layer.backgroundColor];
+	return self.layer.backgroundFillColor;
 }
 
 // We do not want any animations by default.
