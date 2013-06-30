@@ -11,7 +11,7 @@ Although `JNWLabel` can be used in Interface Builder, it must be placed as a cus
 
 ### Example ###
 ``` objc
-JNWLabel *label = [][JNWLabel alloc] initWithFrame:someRect];
+JNWLabel *label = [[JNWLabel alloc] initWithFrame:someRect];
 label.font = [NSFont systemFontOfSize:14];
 label.text = @"Hello World!";
 ```
