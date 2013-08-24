@@ -12,6 +12,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (nonatomic, assign) IBOutlet JNWLabel *label;
+@property (nonatomic, assign) IBOutlet JNWLabel *label2;
 @property (nonatomic, assign) IBOutlet NSWindow *window;
 
 @end
