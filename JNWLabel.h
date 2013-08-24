@@ -16,6 +16,13 @@
  IN THE SOFTWARE.
  */
 
+typedef NS_ENUM(NSInteger, JNWLabelTruncationMode) {
+	JNWLabelTruncationModeNone, // does not truncate
+	JNWLabelTruncationModeStart, // truncates the beginning
+	JNWLabelTruncationModeMiddle, // truncates the middle
+	JNWLabelTruncationModeEnd // truncates the end
+};
+
 #import <Foundation/Foundation.h>
 
 // A light-weight wrapper around CATextLayer.
@@ -69,5 +76,15 @@
 // Defaults to a white color.
 @property (nonatomic, strong) NSColor *backgroundColor;
 
+// Determines whether or not the layer will attempt to wrap the text
+// to fit text that would draw outside the current bounds.
+//
+// Defaults to NO.
+@property (nonatomic, assign) BOOL wraps;
+
+// Determines the behavior of the text wrapping, if enabled.
+//
+// Defaults to JNWLabelTruncationModeNone.
+@property (nonatomic, assign) JNWLabelTruncationMode truncationMode;
 
 @end

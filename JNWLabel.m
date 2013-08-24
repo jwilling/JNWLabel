@@ -73,6 +73,9 @@
 	
 	self.drawsBackground = NO;
 	self.backgroundColor = [NSColor whiteColor];
+	
+	self.wraps = NO;
+	self.truncationMode = JNWLabelTruncationModeNone;
 }
 
 - (id)initWithFrame:(NSRect)frameRect {
@@ -171,6 +174,32 @@
 
 - (NSColor *)backgroundColor {
 	return self.layer.backgroundFillColor;
+}
+
+- (void)setWraps:(BOOL)wraps {
+	_wraps = wraps;
+	self.layer.wrapped = wraps;
+}
+
+- (void)setTruncationMode:(JNWLabelTruncationMode)truncationMode {
+	_truncationMode = truncationMode;
+	
+	switch (truncationMode) {
+		case JNWLabelTruncationModeNone:
+			self.layer.truncationMode = kCATruncationNone;
+			break;
+		case JNWLabelTruncationModeStart:
+			self.layer.truncationMode = kCATruncationStart;
+			break;
+		case JNWLabelTruncationModeMiddle:
+			self.layer.truncationMode = kCATruncationMiddle;
+			break;
+		case JNWLabelTruncationModeEnd:
+			self.layer.truncationMode = kCATruncationEnd;
+			break;
+		default:
+			break;
+	}
 }
 
 // We do not want any animations by default.
