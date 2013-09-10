@@ -29,4 +29,4 @@ Full documentation is provided in the header file ([`JNWLabel.h`](JNWLabel.h)).
 
 
 ## Get In Touch ##
-You can follow me on Twitter as [@j_willing](http://twitter.com/j_willing), email me at the email listed on my GitHub profile, or read my blog at [jwilling.com](http://www.jwilling.com).
+You can follow me on Twitter as [@willing](http://twitter.com/willing), email me at the email listed on my GitHub profile, or read my blog at [jwilling.com](http://www.jwilling.com).
