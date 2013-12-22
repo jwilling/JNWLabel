@@ -26,27 +26,36 @@
 @property (nonatomic, assign) CGSize shadowOffset;
 @property (nonatomic, assign) CGFloat shadowRadius;
 @property (nonatomic, assign) BOOL drawsBackground;
+@property (nonatomic, copy) void (^textDrawingBlock)(CGContextRef ctx, JNWLabelDrawingBlock drawing);
 @end
 
 @implementation JNWTextLayer
 
-- (void)drawInContext:(CGContextRef)ctx {
-	CGContextSaveGState(ctx);
-	
-	if (self.drawsBackground && self.backgroundFillColor != nil) {
-		CGContextSetFillColorWithColor(ctx, self.backgroundFillColor.CGColor);
-		CGContextFillRect(ctx, self.bounds);
+- (void)drawInContext:(CGContextRef)context {
+	JNWLabelDrawingBlock originalDrawing = ^(CGContextRef ctx) {
+		CGContextSaveGState(ctx);
 		
-		CGContextSetShouldSmoothFonts(ctx, YES);
-		CGContextSetAllowsAntialiasing(ctx, YES);
-		CGContextSetAllowsFontSubpixelPositioning(ctx, YES);
-		CGContextSetAllowsFontSubpixelQuantization(ctx, YES);
+		if (self.drawsBackground && self.backgroundFillColor != nil) {
+			CGContextSetFillColorWithColor(ctx, self.backgroundFillColor.CGColor);
+			CGContextFillRect(ctx, self.bounds);
+			
+			CGContextSetShouldSmoothFonts(ctx, YES);
+			CGContextSetAllowsAntialiasing(ctx, YES);
+			CGContextSetAllowsFontSubpixelPositioning(ctx, YES);
+			CGContextSetAllowsFontSubpixelQuantization(ctx, YES);
+		}
+		
+		CGContextSetShadowWithColor(ctx, self.shadowOffset, self.shadowRadius, self.shadowColor.CGColor);
+		[super drawInContext:ctx];
+		
+		CGContextRestoreGState(ctx);
+	};
+	
+	if (self.textDrawingBlock != nil) {
+		self.textDrawingBlock(context, originalDrawing);
+	} else {
+		originalDrawing(context);
 	}
-	
-	CGContextSetShadowWithColor(ctx, self.shadowOffset, self.shadowRadius, self.shadowColor.CGColor);
-	[super drawInContext:ctx];
-	
-	CGContextRestoreGState(ctx);
 }
 
 @end
@@ -200,6 +209,14 @@
 		default:
 			break;
 	}
+}
+
+- (void)setTextDrawingBlock:(void (^)(CGContextRef, JNWLabelDrawingBlock))textDrawingBlock {
+	self.layer.textDrawingBlock = textDrawingBlock;
+}
+
+- (void (^)(CGContextRef, JNWLabelDrawingBlock))textDrawingBlock {
+	return self.layer.textDrawingBlock;
 }
 
 // We do not want any animations by default.
