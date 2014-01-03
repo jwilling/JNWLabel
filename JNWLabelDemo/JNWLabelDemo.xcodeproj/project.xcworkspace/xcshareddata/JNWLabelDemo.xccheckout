@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3635DEB9-1976-48DA-B20A-A86CC5B6B4BF</string>
+	<string>E995468C-FB33-473B-8595-6127FB2E56B3</string>
 	<key>IDESourceControlProjectName</key>
 	<string>JNWLabelDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>E75C177C-2BC0-48EE-B635-DE5FDC998E87</key>
+		<key>27FDA9EE-B137-45A9-8090-D22523E78827</key>
 		<string>https://github.com/jwilling/JNWLabel.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>JNWLabelDemo/JNWLabelDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E75C177C-2BC0-48EE-B635-DE5FDC998E87</key>
+		<key>27FDA9EE-B137-45A9-8090-D22523E78827</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E75C177C-2BC0-48EE-B635-DE5FDC998E87</string>
+	<string>27FDA9EE-B137-45A9-8090-D22523E78827</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E75C177C-2BC0-48EE-B635-DE5FDC998E87</string>
+			<string>27FDA9EE-B137-45A9-8090-D22523E78827</string>
 			<key>IDESourceControlWCCName</key>
 			<string>JNWLabel</string>
 		</dict>

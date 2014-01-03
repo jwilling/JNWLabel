@@ -23,6 +23,8 @@ typedef NS_ENUM(NSInteger, JNWLabelTruncationMode) {
 	JNWLabelTruncationModeEnd // truncates the end
 };
 
+typedef void (^JNWLabelDrawingBlock)(CGContextRef ctx);
+
 #import <Foundation/Foundation.h>
 
 // A light-weight wrapper around CATextLayer.
@@ -86,5 +88,15 @@ typedef NS_ENUM(NSInteger, JNWLabelTruncationMode) {
 //
 // Defaults to JNWLabelTruncationModeNone.
 @property (nonatomic, assign) JNWLabelTruncationMode truncationMode;
+
+/// A block which allows for advanced customization of the text drawing.
+/// The block has a drawing block passed in as an argument. This block, when
+/// called, will draw the original implementation of the text drawing.
+///
+/// As a result, the original drawing can be customized by wrapping this drawing
+/// in the appropriate context modifications to achiveve the desired effect.
+///
+/// Optional.
+@property (nonatomic, copy) void (^textDrawingBlock)(CGContextRef ctx, JNWLabelDrawingBlock drawing);
 
 @end
