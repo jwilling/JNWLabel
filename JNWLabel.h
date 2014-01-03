@@ -17,76 +17,80 @@
  */
 
 typedef NS_ENUM(NSInteger, JNWLabelTruncationMode) {
-	JNWLabelTruncationModeNone, // does not truncate
-	JNWLabelTruncationModeStart, // truncates the beginning
-	JNWLabelTruncationModeMiddle, // truncates the middle
-	JNWLabelTruncationModeEnd // truncates the end
+	/// Does not truncate.
+	JNWLabelTruncationModeNone,
+	/// Truncates the beginning.
+	JNWLabelTruncationModeStart,
+	/// Truncates the middle.
+	JNWLabelTruncationModeMiddle,
+	/// Truncates the end.
+	JNWLabelTruncationModeEnd
 };
 
 typedef void (^JNWLabelDrawingBlock)(CGContextRef ctx);
 
 #import <Foundation/Foundation.h>
 
-// A light-weight wrapper around CATextLayer.
+/// A light-weight wrapper around CATextLayer.
 @interface JNWLabel : NSView
 
-// The string value of the label.
-//
-// Defaults to nil.
+/// The string value of the label.
+///
+/// Defaults to nil.
 @property (nonatomic, copy) NSString *text;
 
-// The font of the label.
-//
-// Defaults to the system default font and size.
+/// The font of the label.
+///
+/// Defaults to the system default font and size.
 @property (nonatomic, strong) NSFont *font;
 
-// The text color of the label.
-//
-// Defaults to black.
+/// The text color of the label.
+///
+/// Defaults to black.
 @property (nonatomic, strong) NSColor *textColor;
 
-// The shadow color of the label.
-//
-// Defaults to a clear color.
+/// The shadow color of the label.
+///
+/// Defaults to a clear color.
 @property (nonatomic, strong) NSColor *shadowColor;
 
-// The shadow offset of the label.
-//
-// Defaults to a zero size.
+/// The shadow offset of the label.
+///
+/// Defaults to a zero size.
 @property (nonatomic, assign) CGSize shadowOffset;
 
-// The shadow radius of the label.
-//
-// Defaults to 0.
+/// The shadow radius of the label.
+///
+/// Defaults to 0.
 @property (nonatomic, assign) CGFloat shadowRadius;
 
-// The text alignment of the label.
-//
-// Defaults to NSLeftTextAlignment.
+/// The text alignment of the label.
+///
+/// Defaults to NSLeftTextAlignment.
 @property (nonatomic, assign) NSTextAlignment textAlignment;
 
-// Determines whether or not the bounds of the label is filled in with
-// an opaque color. Turning this on will enable font smoothing and other
-// text drawing enhancements. The text will appear to be slightly thicker.
-//
-// Defaults to NO.
+/// Determines whether or not the bounds of the label is filled in with
+/// an opaque color. Turning this on will enable font smoothing and other
+/// text drawing enhancements. The text will appear to be slightly thicker.
+///
+/// Defaults to NO.
 @property (nonatomic, assign) BOOL drawsBackground;
 
-// The background color used to fill in the bounds of the label when
-// `drawsBackground` is enabled.
-//
-// Defaults to a white color.
+/// The background color used to fill in the bounds of the label when
+/// `drawsBackground` is enabled.
+///
+/// Defaults to a white color.
 @property (nonatomic, strong) NSColor *backgroundColor;
 
-// Determines whether or not the layer will attempt to wrap the text
-// to fit text that would draw outside the current bounds.
-//
-// Defaults to NO.
+/// Determines whether or not the layer will attempt to wrap the text
+/// to fit text that would draw outside the current bounds.
+///
+/// Defaults to NO.
 @property (nonatomic, assign) BOOL wraps;
 
-// Determines the behavior of the text wrapping, if enabled.
-//
-// Defaults to JNWLabelTruncationModeNone.
+/// Determines the behavior of the text wrapping, if enabled.
+///
+/// Defaults to JNWLabelTruncationModeNone.
 @property (nonatomic, assign) JNWLabelTruncationMode truncationMode;
 
 /// A block which allows for advanced customization of the text drawing.
