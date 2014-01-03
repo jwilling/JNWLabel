@@ -219,9 +219,4 @@
 	return self.layer.textDrawingBlock;
 }
 
-// We do not want any animations by default.
-- (id<CAAction>)actionForLayer:(CALayer *)layer forKey:(NSString *)event {
-	return (id<CAAction>)[NSNull null];
-}
-
 @end
