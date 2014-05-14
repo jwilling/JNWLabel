@@ -61,11 +61,13 @@
 @end
 
 @interface JNWLabel()
-@property (nonatomic, strong) JNWTextLayer *layer;
+
+- (JNWTextLayer *)layer;
+- (void)setLayer:(JNWTextLayer *)layer;
+
 @end
 
 @implementation JNWLabel
-@dynamic layer;
 
 - (void)setup {
 	self.layer = [JNWTextLayer layer];
@@ -217,6 +219,14 @@
 
 - (void (^)(CGContextRef, JNWLabelDrawingBlock))textDrawingBlock {
 	return self.layer.textDrawingBlock;
+}
+
+- (JNWTextLayer *)layer {
+    return (JNWTextLayer *)super.layer;
+}
+
+- (void)setLayer:(JNWTextLayer *)layer {
+    super.layer = layer;
 }
 
 @end
