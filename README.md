@@ -1,7 +1,7 @@
 ## JNWLabel ##
 `JNWLabel` is a light-weight wrapper around `CATextLayer` that provides an alternative to `NSTextField`, with support for accessibility.
 
-![](http://appjon.com/assets/github/JNWLabel.png)
+![](http://jwilling.com/serve/github/jnwlabel/preview.png)
 
 ## Getting Started ##
 `JNWLabel` behaves similarly to `UILabel`.
